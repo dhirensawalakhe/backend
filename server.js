@@ -46,7 +46,7 @@ const PORT = process.env.PORT || 3000;
 
 // Enable CORS for requests from GitHub Pages URL
 app.use(cors({
-  origin: 'https://your-username.github.io', // Replace with your actual GitHub Pages URL
+  origin: 'https://github.com/dhirensawalakhe/backend', // Replace with your actual GitHub Pages URL
 }));
 
 // Your routes, e.g., /download and /upload
