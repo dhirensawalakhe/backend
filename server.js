@@ -38,3 +38,24 @@ app.post('/track-download', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+const express = require('express');
+const cors = require('cors');  // Import the CORS package
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Enable CORS for requests from GitHub Pages URL
+app.use(cors({
+  origin: 'https://your-username.github.io', // Replace with your actual GitHub Pages URL
+}));
+
+// Your routes, e.g., /download and /upload
+app.get('/download', (req, res) => {
+  res.download(path.join(__dirname, 'public/template.jpg'));
+});
+
+// More routes here...
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
